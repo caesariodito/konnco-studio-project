@@ -3,13 +3,13 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 const { DATABASE_URL } = process.env;
 if (!DATABASE_URL) {
- throw new Error('No url');
+	throw new Error('No url');
 }
 export default {
- schema: './src/lib/server/db/schema.ts',
- out: './migrations',
- driver: 'pg',
- dbCredentials: {
-  connectionString: DATABASE_URL
- }
+	schema: './src/lib/server/db/schema.ts',
+	out: './migrations',
+	driver: 'pg',
+	dbCredentials: {
+		connectionString: DATABASE_URL
+	}
 } satisfies Config;
