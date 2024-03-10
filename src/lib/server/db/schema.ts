@@ -1,16 +1,14 @@
 import { relations } from 'drizzle-orm';
-import { pgTable, timestamp, varchar, boolean } from "drizzle-orm/pg-core";
+import { pgTable, timestamp, varchar, boolean } from 'drizzle-orm/pg-core';
 
-export const user = pgTable(
-	'user',
-	{
-		id: varchar('id', { length: 100 }).unique().notNull(),
-		isAdmin: boolean('is_admin').notNull(),
-		// email: varchar('email', { length: 100 }).notNull().unique(),
-		username: varchar('username', { length: 31 }).notNull().unique().primaryKey(),
-		hashedPassword: varchar('hashed_password', { length: 100 }).notNull(),
-		// midtransId: varchar('midtrans_id', { length: 100 }).unique()
-	});
+export const user = pgTable('user', {
+	id: varchar('id', { length: 100 }).unique().notNull(),
+	isAdmin: boolean('is_admin').notNull(),
+	// email: varchar('email', { length: 100 }).notNull().unique(),
+	username: varchar('username', { length: 31 }).notNull().unique().primaryKey(),
+	hashedPassword: varchar('hashed_password', { length: 100 }).notNull()
+	// midtransId: varchar('midtrans_id', { length: 100 }).unique()
+});
 
 export const userRelations = relations(user, ({ many }) => ({
 	sessions: many(session)

@@ -16,7 +16,7 @@ export const lucia = new Lucia(adapter, {
 	getUserAttributes: (data) => {
 		return {
 			username: data.username,
-			isAdmin: data.isAdmin,
+			isAdmin: data.isAdmin
 			// midtransId: data.midtransId
 		};
 	}
