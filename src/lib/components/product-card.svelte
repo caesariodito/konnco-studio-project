@@ -6,7 +6,7 @@
 	<Card.Root class="hover:bg-muted">
 		<Card.Header>
 			<Card.Title>Product A</Card.Title>
-			<Card.Description>Card Description</Card.Description>
+			<Card.Description>something</Card.Description>
 		</Card.Header>
 		<Card.Content>
 			<img
@@ -21,7 +21,7 @@
 			</p>
 		</Card.Content>
 		<Card.Footer>
-			<p class="border-t-2 font-thin">something | some@thing.com</p>
+			<p class="line-clamp-1 overflow-ellipsis border-t-2 font-thin">something@thing.com</p>
 		</Card.Footer>
 	</Card.Root>
 </a>
