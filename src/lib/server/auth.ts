@@ -41,3 +41,13 @@ export function ensureAdmin(locals: App.Locals) {
 		redirect(303, '/');
 	}
 }
+
+export function ensureAuthenticated(locals: App.Locals) {
+	if (!locals.user || !locals.session) {
+		redirect(303, '/auth/login');
+	}
+}
+
+export function isAuthenticated(locals: App.Locals) {
+	return !!locals.user && !!locals.session;
+}

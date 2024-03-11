@@ -8,7 +8,10 @@
 	<DropdownMenu.Trigger asChild let:builder>
 		<Button variant="ghost" builders={[builder]} class="relative h-8 w-8 rounded-full">
 			<Avatar.Root class="h-8 w-8">
-				<Avatar.Image src="/avatars/01.png" alt="@shadcn" />
+				<Avatar.Image
+					src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+					alt="@shadcn"
+				/>
 				<Avatar.Fallback>SC</Avatar.Fallback>
 			</Avatar.Root>
 		</Button>
@@ -27,6 +30,8 @@
 			</a>
 		</DropdownMenu.Group>
 		<DropdownMenu.Separator />
-		<DropdownMenu.Item>Log out</DropdownMenu.Item>
+		<a href="/auth/logout">
+			<DropdownMenu.Item>Log out</DropdownMenu.Item>
+		</a>
 	</DropdownMenu.Content>
 </DropdownMenu.Root>

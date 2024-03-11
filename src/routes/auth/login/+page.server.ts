@@ -1,4 +1,4 @@
-import { lucia } from '$lib/server/auth';
+import { lucia, isAuthenticated } from '$lib/server/auth';
 import { fail, redirect } from '@sveltejs/kit';
 import { Argon2id } from 'oslo/password';
 import { db } from '$lib/server/db';
@@ -8,7 +8,9 @@ import type { PageServerLoad, Actions } from './$types';
 import { user } from '$lib/server/db/schema';
 
 export const load: PageServerLoad = async (event) => {
-	if (event.locals.session) redirect(302, '/');
+	if(isAuthenticated(event.locals)) {
+		redirect(302, '/');
+	}
 };
 
 export const actions: Actions = {

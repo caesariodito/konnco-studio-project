@@ -3,9 +3,12 @@
 	import UserNav from '$lib/components/user-nav.svelte';
 	import Input from './ui/input/input.svelte';
 	import { ShoppingCart } from 'lucide-svelte';
+	import { buttonVariants } from '$lib/components/ui/button';
 
 	let className: string | undefined | null = undefined;
 	export { className as class };
+
+	export let loggedIn: boolean;
 </script>
 
 <nav class={cn('flex w-full items-center justify-between lg:space-x-6', className)}>
@@ -15,6 +18,10 @@
 		<a href="/cart">
 			<ShoppingCart class="hover:text-gray-500" />
 		</a>
-		<UserNav />
+		{#if loggedIn}
+			<UserNav />
+		{:else}
+			<a href="/auth/login" class={buttonVariants({ variant: 'outline' })}>Login/Register</a>
+		{/if}
 	</div>
 </nav>
