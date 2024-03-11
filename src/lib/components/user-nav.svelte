@@ -22,7 +22,9 @@
 		</DropdownMenu.Label>
 		<DropdownMenu.Separator />
 		<DropdownMenu.Group>
-			<DropdownMenu.Item>Settings</DropdownMenu.Item>
+			<a href="/settings">
+				<DropdownMenu.Item>Settings</DropdownMenu.Item>
+			</a>
 		</DropdownMenu.Group>
 		<DropdownMenu.Separator />
 		<DropdownMenu.Item>Log out</DropdownMenu.Item>
